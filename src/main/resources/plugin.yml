@@ -1,6 +1,6 @@
-main: aconsole.main.AConsole
+main: ru.virtue.aconsole.AConsole
 name: AConsole
-version: 1.3.2
+version: 1.3.5
 commands:
    console:
      aliases: [aconsole]

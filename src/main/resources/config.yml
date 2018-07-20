@@ -1,49 +1,3 @@
-Messages:
-# Вывод сообщения тем кого нет в списке Players
-# Print the message to those who are not in the list of Players
-  not_on_the_list: '&9* &dAConsole &9* &7Вас нет в списке для использывания консоли'
-# Вывод сообщения если эта команда не в списке разрешённых
-# Print the message if this command is not in the allowed list
-  white-message: '&9* &dAConsole &9* &7Эта команда не входит в список разрешённых' 
-# Вывод сообщения при вводе /console
-# Display message when you enter /console
-  Command: 
-  - '&9|'
-  - '&9| &dAConsole &9| &fВкл/выкл режим слежки - &d/console spy'
-  - '&9| &dAConsole &9| &fПерезагрузить конфиг - &d/console reload'
-  - '&9| &dAConsole &9| &fВкл/выкл консоль - &d/console toggle'
-  - '&9| &dAConsole &9| &fНаписать в консоль - &d/console [Ваша_Команда]'
-  - '&9|'
-# Вывод сообщения если пытались использовать команду от другого игрока
-  sudo: '&9* &dAConsole &9* &7Вы не можете использовать эту команду от другого игрока'
-# Вывод сообщения если команда прошла успешно
-# Print the message if the command was successful
-  Complete: '&9* &dAConsole &9* &7Команда успешно выполнена'
-# Вывод сообщения если кто то ввёл отключенную команду
-# Print the message if someone entered a disabled team
-  blacklist-message: '&9* &dAConsole &9* &7Данная команда отключена в конфиге'
-# Вывод сообщения при вводе /console reload
-# Message when you type /console reload
-  reload: '&9* &dAConsole &9* &7Плагин успешно перезагружен'
-# Вывод сообщения если у игрока нет оп
-  no_op: '&9* &dAConsole &9* &7У вас нет оп для использывания данной команды'
-# Вывод сообщение если консоль включили
-  enabled: '&9* &dAConsole &9* &7Консоль &aвключена'
-# Вывод сообщение если консоль отключили
-  disabled: '&9* &dAConsole &9* &7Консоль &cвыключена'
-# Вывод сообщения при включении,выключении и получении получении информации
-  Spy:
-# Вывод сообщения если слежка включена(при переключении /console spy)
-    enable: '&9* &dAConsole &9* &7Слежка &aвключена'
-# Вывод сообщения если слежка выключена(при переключении /console spy)
-    disable: '&9* &dAConsole &9* &7Слежка &cвыключена'
-# Вывод сообщения если слежка включена 
-# @command - Команда которую ввёл игрок 
-# @player - игрок который ввёл команду 
-# @prefix - префикс игрока
-# @cancel - выполнилась или не вполнилась команда
-    message: '&9* &dAConsole &9* &d@player &6использовал(а) команду - &c@command'
-
 # Лог
 Log:
 # Записывать всё в лог команды, сообщения и т.д
@@ -104,27 +58,15 @@ Players:
 Permissions:
 # Права на команду /console | по умолчанию true
 # Rights to team /console | default true
-  command:
+  Command:
     enabled: true
     permission: 'console.console'
-# Вывод сообщения если не хватает прав
-# Print the message if not enough rights
-    message: '&9| &dAConsole &9| &cУ вас нет прав на использование этой команды'
-  spy:
+  Spy:
     enabled: true
     permission: 'console.spy'
-# Вывод сообщения если не хватает прав
-# Print the message if not enough rights
-    message: '&9| &dAConsole &9| &cУ вас нет прав что бы следить за игроками'
-  reload:
+  Reload:
     enabled: true
-    permission: 'console.relopad'
-# Вывод сообщения если не хватает прав
-# Print the message if not enough rights
-    message: '&9| &dAConsole &9| &cУ вас нет прав что бы перезагрузить конфиг'
-  toggle:
+    permission: 'console.reload'
+  Toggle:
     enabled: true
     permission: 'console.toggle'
-# Вывод сообщения если не хватает прав
-# Print the message if not enough rights
-    message: '&9| &dAConsole &9| &cУ вас нет прав что бы отключить консоль'
